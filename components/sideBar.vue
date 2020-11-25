@@ -11,7 +11,7 @@
           <div class="cate">热门</div>
           <ul>
             <li v-for="(item,index) in list" :key="index">
-              <a :href="'/detail/' + item.id" target="_blank">
+              <a :href="'/post/' + item.id" target="_blank">
                 <h4 class="title">{{item.title}}</h4>
                 <div class="excerpt">{{item.content.slice(0,40)}}</div>
               </a>
