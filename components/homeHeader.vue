@@ -38,12 +38,14 @@ export default {
     align-items: center;
     .site-name {
       font-size: 24px;
+      cursor: pointer;
     }
     .menu {
       padding-left: 20px;
       ul>li{
         display: inline-block;
         padding: 0 20px;
+        cursor: pointer;
       }
     }
   }
