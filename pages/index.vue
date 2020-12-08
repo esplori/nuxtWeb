@@ -11,7 +11,7 @@
                   <h1 class="home-post-title">{{ item.title }}</h1>
                   <div class="home-post-excerpt">{{ item.content.slice(0, 120)}}...</div>
                   <div class="home-post-info">
-                    <span>{{item.cate}} </span>
+                    <span>{{item.cateName}} </span>
                     <span>{{item.createDate}} </span>
                     <span>{{item.views}} </span>
                   </div>
@@ -67,7 +67,7 @@ export default {
   computed: {
     ...mapState(['page'])
   },
-  methods: {
+  methods: { 
     handleCurrentChange(page) {
       // 更新选择的页码到vuex
       this.changePage(page)
