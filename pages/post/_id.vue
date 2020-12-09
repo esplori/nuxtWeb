@@ -72,7 +72,7 @@ export default {
 <style lang="less" scoped>
 .container {
   .home-body {
-    width: 80%;
+    max-width: 1200px;
     margin: 10px auto;
     .left-body {
       background: #fff;
