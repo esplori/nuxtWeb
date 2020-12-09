@@ -31,7 +31,7 @@ export default {
   box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
   background: #fff;
   .site-info {
-    width: 80%;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;

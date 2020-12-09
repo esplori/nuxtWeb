@@ -9,11 +9,11 @@
               <li v-for="(item, index) in homeList.result" :key="index">
                 <a :href="'/post/' + item.id" target="_blank">
                   <h1 class="home-post-title">{{ item.title }}</h1>
-                  <div class="home-post-excerpt">{{ item.content.slice(0, 120)}}...</div>
+                  <div class="home-post-excerpt">{{ deleteHtmlTag(item.content.slice(0, 120))}}</div>
                   <div class="home-post-info">
-                    <span>{{item.cateName}} </span>
-                    <span>{{item.createDate}} </span>
-                    <span>{{item.views}} </span>
+                    <span class="cate-name">{{item.cateName || '未分类'}} </span>
+                    <span class="create-date el-icon-date"> {{item.createDate}} </span>
+                    <span class="views el-icon-view"> {{item.views}} </span>
                   </div>
                 </a>
               </li>
@@ -28,6 +28,7 @@
               :total="homeList.total">
             </el-pagination>
           </div>
+          <homeFooter></homeFooter>
         </el-col>
         <el-col :span="7">
           <sideBar :list="recommandList"></sideBar>
@@ -73,7 +74,11 @@ export default {
       this.changePage(page)
       window.location.href="/?page=" + this.$store.state.page
     },
-    ...mapMutations(['changePage'])
+    ...mapMutations(['changePage']),
+    deleteHtmlTag(str) {
+      let str1=str.replace(/<\/?.+?>/g,"").replace(/&nbsp;/g,'');
+      return str1.replace(/ /g,"");//dds为得到后的内容
+    }
   }
 };
 </script>
@@ -81,7 +86,7 @@ export default {
 <style lang="less" scoped>
 .container {
   .home-body{
-    width: 80%;
+    max-width: 1200px;
     margin: 10px auto;
     .left-body{
       background: #fff;
@@ -106,6 +111,21 @@ export default {
             padding-top: 10px;
             font-size: 12px;
             color: #828a92;
+            span{
+              margin-right: 10px;
+            }
+            .cate-name{
+              background: #e6f1fb;
+              color: #06c;
+              font-weight: 400;
+              line-height: 18px;
+            }
+            .create-date{
+              color: #828a92;
+            }
+            .views{
+              color: #828a92;
+            }
           }
         }
         li:hover{
