@@ -13,7 +13,7 @@
             <li v-for="(item,index) in list" :key="index">
               <a :href="'/post/' + item.id" target="_blank">
                 <h4 class="title">{{item.title}}</h4>
-                <div class="excerpt">{{item.content.slice(0,40)}}</div>
+                <div class="excerpt">{{ deleteHtmlTag(item.content.slice(0, 40))}}</div>
               </a>
             </li>
           </ul>
@@ -55,6 +55,12 @@ export default {
   data(){
     return {
       searchWords: ''
+    }
+  },
+  methods: {
+    deleteHtmlTag(str) {
+      let str1=str.replace(/<\/?.+?>/g,"").replace(/&nbsp;/g,'');
+      return str1.replace(/ /g,"");//dds为得到后的内容
     }
   }
 }
