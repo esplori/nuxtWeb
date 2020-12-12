@@ -1,20 +1,20 @@
 # nuxt
 
-## Build Setup
+## 启动应用
 
 ```bash
-# install dependencies
+# 安装依赖
 $ npm install
 
-# serve with hot reload at localhost:3000
+# 本地启动在 localhost:3000
 $ npm run dev
 
-# build for production and launch server
+# 部署到服务器，先build，再执行start启动
 $ npm run build
 $ npm run start
 
-# generate static project
+# 生成静态项目
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+更新nuxt详情请转到 [Nuxt.js docs](https://nuxtjs.org).
