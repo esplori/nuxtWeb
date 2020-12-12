@@ -5,7 +5,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'javascript技术分享,专注开发技术分享,书写心得,分享感悟。' },
+      { hid: 'keywords', name: 'keywords', content: 'javascript技术分享,vuejs,web前端开发,前端面试,web开发,dsiab,javascript技术,wordpress博客' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

@@ -10,7 +10,7 @@
 <style lang="less">
   .home-footer{
     margin-top: 40px;
-    padding: 50px;
+    padding: 20px;
     margin: 0 auto;
     .site-info{
       text-align: center;

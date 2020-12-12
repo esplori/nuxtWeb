@@ -17,15 +17,12 @@
           <sideBar :list="recommandList"></sideBar>
         </el-col>
       </el-row>
-      <div>
-        <!-- <el-button @click="search">search</el-button> -->
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-import {getDetailApi, getRecomListApi, getDetailApi2} from '../api/index'
+import { getDetailApi, getRecomListApi, getDetailApi2 } from "../api/index";
 export default {
   components: {
     homeHeader: () => import("../../components/homeHeader.vue"),
@@ -38,12 +35,17 @@ export default {
   },
   head() {
     return {
-      title: this.detailData.title,
+      title: this.detailData.title + '-javasrcipt技术分享',
       meta: [
         {
           hid: "description",
           name: "description",
           content: this.detailData.title,
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: this.detailData.keywords || this.detailData.title,
         },
       ],
     };
@@ -60,10 +62,8 @@ export default {
   },
   methods: {
     async search() {
-      let [detail] = await Promise.all([
-      getDetailApi2(this.$route.params.id)
-    ]);
-      console.log('detail==' + detail);
+      let [detail] = await Promise.all([getDetailApi2(this.$route.params.id)]);
+      console.log("detail==" + detail);
     },
   },
 };

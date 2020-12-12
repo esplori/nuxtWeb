@@ -28,7 +28,6 @@
               :total="homeList.total">
             </el-pagination>
           </div>
-          <homeFooter></homeFooter>
         </el-col>
         <el-col :span="7">
           <sideBar :list="recommandList"></sideBar>
@@ -44,8 +43,7 @@ import {getListApi, getRecomListApi} from './api/index'
 export default {
   components: {
     homeHeader: () => import('../components/homeHeader.vue'),
-    sideBar: () => import('../components/sideBar.vue'),
-    homeFooter: () => import('../components/homeFooter.vue')
+    sideBar: () => import('../components/sideBar.vue')
   },
   data() {
     return {};
@@ -106,6 +104,7 @@ export default {
             padding-top: 10px;
             font-size: 14px;
             color: #828a92;
+            word-break: break-all;
           }
           .home-post-info{
             padding-top: 10px;

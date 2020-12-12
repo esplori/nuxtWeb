@@ -28,11 +28,8 @@
         <!--</div>-->
       <!--</li>-->
       <li>
-        <a href="http://admin.dsiab.com">后台管理</a>
-      </li>
-      <li>
         <div>
-          <!--<homeFooter></homeFooter>-->
+          <homeFooter></homeFooter>
         </div>
       </li>
     </ul>
