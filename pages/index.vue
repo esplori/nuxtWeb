@@ -9,7 +9,7 @@
               <li v-for="(item, index) in homeList.result" :key="index">
                 <a :href="'/post/' + item.id" target="_blank">
                   <h1 class="home-post-title">{{ item.title }}</h1>
-                  <div class="home-post-excerpt">{{ deleteHtmlTag(item.content.slice(0, 120))}}</div>
+                  <div class="home-post-excerpt">{{ deleteHtmlTag(item.content.slice(0, 120))}} ...</div>
                   <div class="home-post-info">
                     <span class="cate-name">{{item.cateName || '未分类'}} </span>
                     <span class="create-date el-icon-date"> {{item.createDate}} </span>
@@ -101,6 +101,7 @@ export default {
             color: #06c;
           }
           .home-post-excerpt {
+            line-height: 24px;
             padding-top: 10px;
             font-size: 14px;
             color: #828a92;
