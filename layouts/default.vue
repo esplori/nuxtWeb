@@ -1,9 +1,16 @@
 <template>
   <div>
     <Nuxt />
+    <commonFooter></commonFooter>
   </div>
 </template>
-
+<script>
+export default {
+  components: {
+    commonFooter: () => import('..//components/homeFooter.vue')
+  }
+}
+</script>
 <style>
 html {
   font-family:

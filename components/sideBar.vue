@@ -27,11 +27,6 @@
           <!--</ul>-->
         <!--</div>-->
       <!--</li>-->
-      <li>
-        <div>
-          <homeFooter></homeFooter>
-        </div>
-      </li>
     </ul>
   </div>
 
