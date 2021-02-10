@@ -2,21 +2,14 @@
   <div class="container">
     <homeHeader></homeHeader>
     <div class="home-body">
-      <el-row :gutter="10">
-        <el-col :span="17">
-          <div class="left-body">
-            <h1 class="detail-post-title">{{ detailData.title }}</h1>
-            <div class="detail-post-info">{{ detailData.createDate }}</div>
-            <div
-              v-html="detailData.htmlContent"
-              class="detail-post-content"
-            ></div>
-          </div>
-        </el-col>
-        <el-col :span="7">
-          <sideBar :list="recommandList"></sideBar>
-        </el-col>
-      </el-row>
+      <div class="left-body">
+        <h1 class="detail-post-title">{{ detailData.title }}</h1>
+        <div class="detail-post-info">{{ detailData.createDate }}</div>
+        <div v-html="detailData.htmlContent" class="detail-post-content"></div>
+      </div>
+      <div class="right-sidebar">
+        <sideBar :list="recommandList"></sideBar>
+      </div>
     </div>
   </div>
 </template>
@@ -35,7 +28,7 @@ export default {
   },
   head() {
     return {
-      title: this.detailData.title + '-javasrcipt技术分享',
+      title: this.detailData.title + "-javasrcipt技术分享",
       meta: [
         {
           hid: "description",
@@ -74,10 +67,14 @@ export default {
   .home-body {
     max-width: 1200px;
     margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
     .left-body {
+      width: 100%;
       background: #fff;
       box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
       padding: 20px;
+      margin-right: 10px;
       .detail-post-title {
         color: #141414;
         font-size: 26px;
@@ -96,6 +93,11 @@ export default {
         color: #4a4a4a;
         font-weight: 400;
         word-break: break-word;
+      }
+    }
+    @media screen and(max-width: 1024px) {
+      .right-sidebar{
+        display: none;
       }
     }
     .side-bar {

@@ -8,7 +8,7 @@
       <!--</li>-->
       <li>
         <div class="hot-views">
-          <div class="cate">热门</div>
+          <div class="cate">推荐阅读</div>
           <ul>
             <li v-for="(item,index) in list" :key="index">
               <a :href="'/post/' + item.id" target="_blank">
