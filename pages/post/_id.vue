@@ -74,7 +74,6 @@ export default {
       background: #fff;
       box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
       padding: 20px;
-      margin-right: 10px;
       .detail-post-title {
         color: #141414;
         font-size: 26px;

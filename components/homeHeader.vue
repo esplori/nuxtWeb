@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       menList: [
-        // { name: "资源下载", path: "/source" },
+        { name: "淘宝优乐购", path: "/tbk" },
         { name: "网站导航", path: "/navigation" },
       ],
     };

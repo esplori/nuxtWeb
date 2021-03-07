@@ -90,7 +90,6 @@ export default {
     justify-content: space-between;
     .left-body {
       background: #fff;
-      margin-right: 10px;
       box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
       ul {
         li {

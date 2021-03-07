@@ -21,3 +21,13 @@ export async function getDetailApi2 (id, data) {
   const options = {}
   return get(url, data, options)
 }
+export async function getShopListApi (id, data) {
+  const url = baseUrl + '/tbk/getList'
+  const options = {}
+  return get(url, data, options)
+}
+export async function getTbkDetailApi (id, data) {
+  const url = baseUrl +  '/tbk/getDetail/' + id
+  const options = {}
+  return get(url, data, options)
+}
