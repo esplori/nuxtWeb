@@ -49,8 +49,7 @@ export default {
   },
   data() {
     return {
-      data: 0,
-      page: 1,
+      data: 0
     };
   },
   head() {
@@ -63,6 +62,7 @@ export default {
     return {
       list: res.data.result,
       total: res.data.total || 80,
+      page: parseInt(route.params.id || 1)
     };
   },
   methods: {
