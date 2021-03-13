@@ -2,30 +2,31 @@
   <div class="container">
     <homeHeader></homeHeader>
     <div class="home-body">
-      <div
+      <a
         class="tbk-item"
         v-for="(item, index) in list"
         :key="index"
-        @click="toDetail(item)"
+        :href="'/tbk/detail/' + item.id"
+        target="_blank"
       >
         <div>
-          <a @click="toDetail(item)"
+          <a
             ><img :src="item.pict_url" alt="" width="197px" height="197px"
           /></a>
-          <a @click="toDetail(item)" class="item-title">{{ item.title }}</a>
+          <a class="item-title">{{ item.title }}</a>
           <div class="item-sale-info">
             <div>
-              <a class="zk_final_price" @click="toDetail(item)"
+              <a class="zk_final_price"
                 ><span class="rmbicon">¥</span>{{ item.zk_final_price }}</a
               >
-              <a class="reserve_price" @click="toDetail(item)"
+              <a class="reserve_price"
                 ><span class="rmbicon">¥</span>{{ item.reserve_price }}</a
               >
             </div>
             <div class="volume">月销{{ item.volume }}笔</div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </template>
@@ -60,10 +61,6 @@ export default {
     };
   },
   methods: {
-    toDetail(item) {
-      // window.open(item.url);
-      location.href = '/tbk/detail/' + item.id
-    },
   },
 };
 </script>
@@ -84,6 +81,7 @@ export default {
       width: 235px;
       padding: 20px;
       border: 1px solid #f4f4f4;
+      cursor: pointer;
       .item-title {
         display: block;
         height: 40px;

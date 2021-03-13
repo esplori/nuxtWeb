@@ -2,25 +2,25 @@
   <div class="container">
     <homeHeader></homeHeader>
     <div class="home-body">
-      <div
-        class="tbk-item"
-      >
+      <div class="tbk-item">
         <div>
           <a :href="item.pict_url"
             ><img :src="item.pict_url" alt="" width="197px" height="197px"
           /></a>
+        </div>
+      </div>
+      <div class="item-info">
+        <div>
           <a class="item-title">{{ item.title }}</a>
-          <div class="item-sale-info">
-            <div>
-              <a class="zk_final_price"
-                ><span class="rmbicon">¥</span>{{ item.zk_final_price }}</a
-              >
-              <a class="reserve_price"
-                ><span class="rmbicon">¥</span>{{ item.reserve_price }}</a
-              >
-            </div>
-            <div class="volume">月销{{ item.volume }}笔</div>
-          </div>
+        </div>
+        <div class="reserve_price">
+          原价：<span class="rmbicon">¥</span>{{ item.reserve_price }}
+        </div>
+        <div class="zk_final_price">
+          现价：<span class="rmbicon">¥</span>{{ item.zk_final_price }}
+        </div>
+        <div>
+          <el-button type="danger" @click="order(item)">去下单</el-button>
         </div>
       </div>
     </div>
@@ -42,16 +42,17 @@ export default {
     return {};
   },
   async asyncData({ $axios, route }) {
-    let [res] = await Promise.all([
-      getTbkDetailApi(route.params.id)
-      ]);
+    let [res] = await Promise.all([getTbkDetailApi(route.params.id)]);
     console.log("res---------", res);
     let jp = res.data.result;
     return {
-      item: res.data.result
+      item: res.data.result,
     };
   },
   methods: {
+    order(item) {
+      window.open(item.url);
+    },
   },
 };
 </script>
@@ -59,9 +60,11 @@ export default {
 <style lang="less" scoped>
 .container {
   background: #fff;
+  min-height: 768px;
   .home-body {
     max-width: 1190px;
     margin: 10px auto;
+    padding: 50px 0;
     display: flex;
     flex-wrap: wrap;
     .tbk-item:hover {
@@ -72,6 +75,9 @@ export default {
       width: 235px;
       padding: 20px;
       border: 1px solid #f4f4f4;
+    }
+    .item-info {
+      padding: 0 20px;
       .item-title {
         display: block;
         height: 40px;
@@ -79,25 +85,16 @@ export default {
         overflow: hidden;
         margin: 8px 0;
         color: #666;
-        font-size: 14px;
+        font-size: 22px;
       }
-      .item-sale-info {
+      .reserve_price {
+        font-size: 20px;
         color: #999;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        .zk_final_price {
-          color: #ff5000;
-          font-size: 22px;
-        }
-        .reserve_price {
-          color: #999;
-          font-size: 12px;
-          text-decoration: line-through;
-        }
-        .rmbicon {
-          font-size: 12px;
-        }
+      }
+      .zk_final_price {
+        line-height: 100px;
+        font-size: 50px;
+        color: #ff5000;
       }
     }
   }
