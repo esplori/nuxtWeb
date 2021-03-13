@@ -21,8 +21,12 @@ export async function getDetailApi2 (id, data) {
   const options = {}
   return get(url, data, options)
 }
-export async function getShopListApi (id, data) {
-  const url = baseUrl + '/tbk/getList'
+export async function getShopListApi (params, data) {
+  console.log('page==', params.page)
+  if (!params.page) {
+    params.page = 1
+  }
+  let url = baseUrl + '/tbk/getList/' + params.page
   const options = {}
   return get(url, data, options)
 }
