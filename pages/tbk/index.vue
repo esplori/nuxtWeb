@@ -53,7 +53,21 @@ export default {
     };
   },
   head() {
-    return {};
+    return {
+      title: "淘宝优乐购",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "淘宝优乐购",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: "淘宝优乐购",
+        },
+      ],
+    };
   },
   async asyncData({ $axios, route }) {
     // this.page = route.params.id || 1
