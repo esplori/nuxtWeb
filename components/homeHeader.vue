@@ -17,6 +17,7 @@ export default {
   data() {
     return {
       menList: [
+        { name: "首页", path: "/" },
         { name: "淘宝优乐购", path: "/tbk" },
         { name: "网站导航", path: "/navigation" },
       ],
