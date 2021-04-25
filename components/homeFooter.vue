@@ -16,6 +16,10 @@
     margin: 0 auto;
     .site-info{
       text-align: center;
+      color: #828a92;
+      a{
+        color: #828a92;
+      }
     }
   }
 </style>

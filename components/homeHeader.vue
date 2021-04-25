@@ -38,7 +38,7 @@ export default {
     justify-content: flex-start;
     align-items: center;
     .site-name {
-      font-size: 24px;
+      font-size: 22px;
       cursor: pointer;
     }
     .menu {
@@ -47,6 +47,7 @@ export default {
         display: inline-block;
         padding: 0 20px;
         cursor: pointer;
+        font-size: 18px;
       }
     }
   }
