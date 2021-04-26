@@ -40,11 +40,11 @@
 
 <script>
 import { mapState, mapMutations } from "vuex";
-import { getListApi, getRecomListApi } from "./api/index";
+import { getListApi, getRecomListApi } from "../api/index";
 export default {
   components: {
-    homeHeader: () => import("../components/homeHeader.vue"),
-    sideBar: () => import("../components/sideBar.vue"),
+    homeHeader: () => import("../../components/homeHeader.vue"),
+    sideBar: () => import("../../components/sideBar.vue"),
   },
   data() {
     return {};
@@ -55,7 +55,7 @@ export default {
     // store.page = parseInt(query.page);
 
     let [homeList, recommandList] = await Promise.all([
-      getListApi({ page: 1 }),
+      getListApi({ page: route.params.id || 1 }),
       getRecomListApi({}),
     ]);
     return {
@@ -74,7 +74,7 @@ export default {
       // window.location.href = "/?page=" + this.$store.state.page;
       window.location.href = "/page/" + page;
     },
-    ...mapMutations(["changePage"]),
+    // ...mapMutations(["changePage"]),
     deleteHtmlTag(str) {
       let str1 = str.replace(/<\/?.+?>/g, "").replace(/&nbsp;/g, "");
       return str1.replace(/ /g, ""); //dds为得到后的内容
@@ -91,6 +91,7 @@ export default {
     display: flex;
     justify-content: space-between;
     .left-body {
+      width: 100%;
       background: #fff;
       box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
       ul {
