@@ -24,7 +24,7 @@
           <el-pagination
             @current-change="handleCurrentChange"
             :current-page.sync="$store.page"
-            :page-size="20"
+            :page-size="10"
             layout="total, pager"
             :total="homeList.total"
           >
@@ -55,7 +55,7 @@ export default {
     store.page = parseInt(query.page);
 
     let [homeList, recommandList] = await Promise.all([
-      getListApi({ page: query.page || 1, pageSize: 20 }),
+      getListApi({ page: query.page || 1, pageSize: 10 }),
       getRecomListApi({}),
     ]);
     return {
