@@ -48,7 +48,7 @@ export default {
   },
   async asyncData({ $axios, route }) {
     // this.page = route.params.id || 1
-    let [res] = await Promise.all([getShopListApi({})]);
+    let [res] = await Promise.all([getShopListApi({page: route.params.id || 1})]);
     // console.log("res.data---------", res.data);
     return {
       list: res.data.result,
