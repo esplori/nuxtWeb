@@ -66,10 +66,12 @@ export default {
       }
       ul {
         li {
-          color: #0474c8;
           padding: 20px;
           .item-list{
             display: flex;
+          }
+          a{
+            color: #0474c8;
           }
         }
       }
