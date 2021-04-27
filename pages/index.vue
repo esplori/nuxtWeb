@@ -91,6 +91,7 @@ export default {
     display: flex;
     justify-content: space-between;
     .left-body {
+      width: 100%;
       background: #fff;
       box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
       ul {
@@ -141,6 +142,9 @@ export default {
         background: #fff;
         text-align: center;
       }
+    }
+    .right-sidebar{
+      max-width: 400px;
     }
     @media screen and (max-width: 1024px) {
       .right-sidebar{

@@ -94,6 +94,9 @@ export default {
         word-break: break-word;
       }
     }
+    .right-sidebar{
+      max-width: 400px;
+    }
     @media screen and(max-width: 1024px) {
       .right-sidebar{
         display: none;
