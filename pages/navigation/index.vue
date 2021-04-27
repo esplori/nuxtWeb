@@ -3,18 +3,27 @@
     <homeHeader></homeHeader>
     <div class="home-body">
       <el-row :gutter="10">
-        <el-col :span="17">
+        <el-col :span="24">
           <div class="left-body">
+            <div class="nav-tabs">
+              <el-tabs v-model="activeName">
+                <el-tab-pane label="所有" name="all"></el-tab-pane>
+                <el-tab-pane label="开发" name="first"></el-tab-pane>
+                <el-tab-pane label="资讯" name="second"></el-tab-pane>
+                <el-tab-pane label="导航" name="third"></el-tab-pane>
+              </el-tabs>
+            </div>
             <ul>
               <li v-for="(item, index) in list" :key="index">
-                 <a :href="item.content" target="_blank">{{item.title}}</a>
+                 <div><a :href="item.content" target="_blank">{{item.title}}</a></div>
+                 <!-- <div>{{item.title}}</div> -->
               </li>
             </ul>
           </div>
         </el-col>
-        <el-col :span="7">
-          <sideBar></sideBar>
-        </el-col>
+        <!-- <el-col :span="7"> -->
+          <!-- <sideBar></sideBar> -->
+        <!-- </el-col> -->
       </el-row>
     </div>
   </div>
@@ -32,6 +41,7 @@ export default {
   },
   data() {
     return {
+      activeName: 'all'
     };
   },
   async asyncData({query,store,$axios}) {
@@ -51,9 +61,12 @@ export default {
     .left-body{
       background: #fff;
       box-shadow: 0 1px 3px rgba(27, 95, 160, .1);
+      .nav-tabs{
+        padding: 20px 20px;
+      }
       ul {
         li {
-          display: inline-block;
+          color: #0474c8;
           padding: 20px;
           .item-list{
             display: flex;
