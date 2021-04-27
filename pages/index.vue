@@ -95,19 +95,19 @@ export default {
       box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
       ul {
         li {
-          padding: 20px;
+          padding: 30px 20px;
           border-bottom: 1px solid #f5f5f5;
           .home-post-title {
-            font-size: 20px;
+            font-size: 22px;
             text-overflow: ellipsis;
           }
           .home-post-title:hover {
             color: #06c;
           }
           .home-post-excerpt {
-            line-height: 24px;
-            padding-top: 10px;
-            font-size: 14px;
+            line-height: 30px;
+            padding: 15px 0;
+            font-size: 16px;
             color: #828a92;
             word-break: break-all;
           }
